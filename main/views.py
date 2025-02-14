@@ -20,7 +20,8 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
-
+def login(request):
+    return render(request, 'login.html')
 def herb_search(request):
     herb_data = None  # Will store the fetched herb details
     query = request.GET.get('q')  # 'q' will be the query parameter from the search form
