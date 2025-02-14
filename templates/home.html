@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Herbal Garden</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Virtual Herbal Garden</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+  <main>
+    <div class="InputContainer">
+        <input placeholder="Search.." id="input" class="input" name="text" type="text">
+    </div>
+    </main>
+  <!-- Grid container for herb cards -->
+  <div class="grid" id="herbGrid">
+    <!-- Cards will be appended here dynamically -->
+  </div>
+  
+  <!-- Loading indicator -->
+  <section id="loadingIndicator" class="dots-container">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </section>
+  
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

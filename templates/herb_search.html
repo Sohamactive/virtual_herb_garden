@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herb Search</title>
+</head>
+<body>
+    <h1>Herb Search</h1>
+    <!-- Search Form -->
+    <form method="get" action="{% url 'herb_search' %}">
+        <input type="text" name="q" placeholder="Enter herb name" value="{{ query|default:'' }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Herb Data -->
+    {% if herb %}
+        {% if herb.error %}
+            <p>{{ herb.error }}</p>
+        {% else %}
+            <h2>{{ herb.title }}</h2>
+            {% if herb.thumbnail %}
+                <img src="{{ herb.thumbnail.source }}" alt="{{ herb.title }}" style="max-width:200px;">
+            {% endif %}
+            <p>{{ herb.extract }}</p>
+            <a href="{{ herb.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
