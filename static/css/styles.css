@@ -12,7 +12,7 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
   }
   #name{
-    width: 400px;
+    width: 275px;
 }
 .return-link{
     color: #1ee928;
@@ -20,6 +20,7 @@
 .return-link button{
     background-color: #35424a;
 }
+/* form login */
 form {
     background: #f9f9f9;
     padding: 20px;
